@@ -14,9 +14,13 @@ ActiveRecord::Schema.define(version: 2022_05_31_175113) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "name"
+    t.string "location"
+    t.string "description"
   end
 
   create_table "stops", force: :cascade do |t|
+    t.datetime "arrival"
+    t.datetime "departure"
     t.integer "trip_id"
     t.integer "destination_id"
   end
@@ -24,6 +28,8 @@ ActiveRecord::Schema.define(version: 2022_05_31_175113) do
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
 end
