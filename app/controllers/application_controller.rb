@@ -3,7 +3,11 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Good luck dummy!" }.to_json
+    destinations=Destination.all
+    trips = Trip.all
+    stops = Stop.all
+    arr=[destinations,trips,stops]
+    arr.to_json
   end
 
   get "/destinations" do

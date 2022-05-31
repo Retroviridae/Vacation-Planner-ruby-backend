@@ -18,11 +18,11 @@ d5= Destination.create(name:"Germany",location:"Europe",description:"Family,socc
  t3 = Trip.create(title:"International", description:"South america and germany!!",start_date:(Date.new(2022, 8, 15)),end_date:Date.new(2023, 1, 3))
 puts "creating stops"
 
-s1= Stop.create(destination_id:d1[:id], trip_id:t1[:id])
-s2 =Stop.create(destination_id:d3[:id], trip_id:t1[:id])
-s3 =Stop.create(destination_id:d2[:id], trip_id:t2[:id])
-s4 =Stop.create(destination_id:d4[:id], trip_id:t3[:id])
-s5 = Stop.create(destination_id:d5[:id], trip_id:t3[:id])
+s1= Stop.create(destination_id:d1[:id], trip_id:t1[:id],arrival:(Date.new(2022, 6, 2)),departure:(Date.new(2022, 6, 3)))
+s2 =Stop.create(destination_id:d3[:id], trip_id:t1[:id],arrival:(Date.new(2022, 6, 7)),departure:(Date.new(2022, 6, 9)))
+s3 =Stop.create(destination_id:d2[:id], trip_id:t2[:id],arrival:(Date.new(2023, 1, 3)),departure:(Date.new(2023, 1, 7)))
+s4 =Stop.create(destination_id:d4[:id], trip_id:t3[:id],arrival:(Date.new(2022, 6, 2)),departure:(Date.new(2022, 6, 3)))
+s5 =Stop.create(destination_id:d5[:id], trip_id:t3[:id],arrival:(Date.new(2022, 8, 15)),departure:(Date.new(2023, 1, 3)))
 
 
 
