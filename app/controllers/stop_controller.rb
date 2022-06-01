@@ -36,6 +36,8 @@ class StopController < ApplicationController
     end
 
     def serialize(stop)
-        stop.to_json
+        stop.to_json(
+            methods: :destination
+        )
     end
 end

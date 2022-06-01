@@ -6,7 +6,7 @@ class DestinationController < ApplicationController
     
     get "/destinations/:id" do
         destination = Destination.find(params[:id])
-        destination.to_json(include: :stops)
+        serialize(destination)
      end
 
     post "/destinations" do

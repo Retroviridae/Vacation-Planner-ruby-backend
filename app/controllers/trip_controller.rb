@@ -6,7 +6,9 @@ class TripController < ApplicationController
 
     get "/trips/:id" do
         trip = Trip.find(params[:id])
-        trip.to_json(include: :destinations)
+        trip.to_json(
+            methods: :expanded_stops
+        )
     end
 
     post "/trips" do
