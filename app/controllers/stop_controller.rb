@@ -1,7 +1,8 @@
 class StopController < ApplicationController
+    
     get "/stops" do
         stops = Stop.all
-        serialize(stops)
+        stops.to_json
     end
 
     get "/stops/:id" do
