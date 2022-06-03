@@ -2,10 +2,6 @@ class Trip < ActiveRecord::Base
     has_many :stops
     has_many :destinations, through: :stops
 
-    # def expanded_stops
-    #     new_stops = {}
-    #     self.stops.map{|stop|[stop,stop.destination]}
-    # end
     def expanded_stops
         new_stops =[]
         self.stops.map do |stop|
@@ -20,4 +16,9 @@ class Trip < ActiveRecord::Base
         end
         new_stops
     end
+    # def initialize(attributes)
+    #     attributes.each do |key, value| 
+    #       self.send("#{key}=", value)
+    #     end
+    #   end
 end
